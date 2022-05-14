@@ -1,0 +1,53 @@
+#app {
+  --glow-pink: #FF1482;
+  --black-900: #222;
+  --black-800: #3b3b3b;
+  --black-700: #515151;
+  --black-600: #626262;
+  --black-500: #7e7e7e;
+  --black-400: #9e9e9e;
+  --black-300: #b1b1b1;
+  --black-200: #cfcfcf;
+  --black-100: #e1e1e1;
+  --black-0: #fff;
+}
+
+@font-face {
+  font-family: "Haffer";
+  src: url("./assets/fonts/Haffer-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+.headline {
+  font-size: 1.7rem;
+  color: white;
+}
+
+input {
+  all:unset;
+  background: var(--black-800);
+  color: white;
+  padding: 13px;
+  border-radius: 3px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+
+
+/* tailwind classes */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.w-full {
+width: 100%;
+}

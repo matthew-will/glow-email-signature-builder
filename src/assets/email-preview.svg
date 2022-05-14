@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="389" viewBox="0 0 600 389">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="599" height="388" x=".5" y=".5" fill="#FFF" stroke="#4E4E4E" rx="8"/>
+    <path fill="#404040" d="M8,0 L592,0 C596.418278,-8.11624501e-16 600,3.581722 600,8 L600,40 L600,40 L0,40 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z"/>
+    <text fill="#777" font-family="Haffer-Regular, Haffer" font-size="15" letter-spacing="-.25">
+      <tspan x="16" y="99">Subject</tspan>
+    </text>
+    <text fill="#777" font-family="Haffer-Regular, Haffer" font-size="15" letter-spacing="-.25">
+      <tspan x="16" y="63">To</tspan>
+    </text>
+    <text fill="#FFF" font-family="Haffer-Regular, Haffer" font-size="15" letter-spacing="-.25">
+      <tspan x="16" y="25">New Message</tspan>
+    </text>
+    <text fill="#777" font-family="Haffer-Regular, Haffer" font-size="15" letter-spacing="-.25">
+      <tspan x="535.5" y="63">Cc Bcc</tspan>
+    </text>
+    <line x1="16.5" x2="584.5" y1="74.5" y2="74.5" stroke="#ECEFF1" stroke-linecap="square"/>
+    <line x1="16.5" x2="584.5" y1="111.5" y2="111.5" stroke="#ECEFF1" stroke-linecap="square"/>
+    <rect width="10" height="3" x="527" y="23" fill="#B3B3B3"/>
+    <rect width="10" height="2" x="574.646" y="20.146" fill="#B3B3B3" transform="rotate(-45 579.646 21.146)"/>
+    <rect width="10" height="2" x="575.243" y="20.243" fill="#B3B3B3" transform="rotate(-135 580.243 21.243)"/>
+    <polygon fill="#B3B3B3" points="555.881 15.585 560.964 15.585 560.964 20.676 559.165 18.9 554.476 23.643 556.179 25.389 551.119 25.389 551.119 20.487 553.085 22.344 557.837 17.609"/>
+    <text fill="#000" font-family="Haffer-Regular, Haffer" font-size="15">
+      <tspan x="15" y="176">-</tspan>
+    </text>
+    <text fill="#000" font-family="Haffer-Regular, Haffer" font-size="15">
+      <tspan x="21" y="176">-</tspan>
+    </text>
+  </g>
+</svg>
