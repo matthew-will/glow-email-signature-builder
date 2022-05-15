@@ -8,7 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "clipboard": "^2.0.11",
+    "vue": "^3.2.25",
+    "vue-multiselect": "^3.0.0-alpha.2",
+    "vue-select": "^4.0.0-beta.3",
+    "vue3-clipboard": "^1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",

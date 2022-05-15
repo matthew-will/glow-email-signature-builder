@@ -1,9 +1,9 @@
 import { reactive } from "vue";
 
-export const signature = reactive({
-  name: "name",
-  title: "title",
-  email: "email",
+export const activePerson = reactive({
+  name: "Active Name",
+  title: "Active Title",
+  email: "active@weareglow.com",
   phone: "123.456.789",
 });
 

@@ -1,5 +1,9 @@
 <script setup>
 import { ref } from "vue";
+import { activePerson } from "../store.js";
+import Clipboard from "clipboard";
+
+new Clipboard(".btn");
 
 defineProps({
   msg: String,
@@ -21,11 +25,13 @@ const count = ref(0);
                   alt="GLOW"
               /></a>
             </td>
-            <td class="name">
-              name<br />
-              <p class="title">signature.title</p>
-              <p class="info lowercase">email@weareglow.com</p>
-              <p class="address">phone • 333 Hudson St. 302 NY, NY 10013</p>
+            <td id="copy-sig" class="name">
+              {{ activePerson.name }}<br />
+              <p class="title">{{ activePerson.title }}</p>
+              <p class="info lowercase">{{ activePerson.email }}</p>
+              <p class="address">
+                {{ activePerson.phone }} • 333 Hudson St. 302 NY, NY 10013
+              </p>
             </td>
           </tr>
         </table>
@@ -37,6 +43,9 @@ const count = ref(0);
         alt="Email Preview"
       />
     </div>
+    <button class="btn" data-clipboard-target=".preview-sig">
+      Copy Signature
+    </button>
   </div>
 </template>
 
@@ -45,6 +54,7 @@ const count = ref(0);
   background: var(--black-700);
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   .email-bg {
@@ -115,5 +125,10 @@ const count = ref(0);
     letter-spacing: 0.2px;
     padding-top: 4px;
   }
+}
+.btn {
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: white;
 }
 </style>
