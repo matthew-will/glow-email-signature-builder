@@ -8,27 +8,27 @@ const showModal = function () {
 
 const steps = [
   {
-    id: 1,
+    id: 0,
     title: "Copy the Signature",
     copy: "Verify the information in your signature is correct, then click the `Copy Signature` button to copy it to your clipboard.",
   },
   {
-    id: 2,
+    id: 1,
     title: "Open Gmail Settings",
     copy: "In Gmail, click Settings (Gear icon) in the top right corner, then click 'See all Settings'. Scroll down until you see options for 'Signature'.",
   },
   {
-    id: 3,
+    id: 2,
     title: "Create New Signature",
     copy: " Click '+ Create New' and name your signature accordingly. Then in the text field to the right, paste your signature (CMD + V for Mac, Cntrl + V for PC). It should look the same as in the preview window. If it doesn't ensure you selected all elements.",
   },
   {
-    id: 4,
+    id: 3,
     title: "Set Signature Defaults",
     copy: "Open the 'For New Emails Use' dropdown and select your saved signature.",
   },
   {
-    id: 5,
+    id: 4,
     title: "Save Changes",
     copy: "Scroll down to the bottom of the page and click 'Save Changes'. You should now see the email signature on newly composed emails.",
   },
@@ -61,6 +61,7 @@ const steps = [
             <video
               playsinline
               muted
+              loop
               autoplay
               :src="`../src/assets/video/step-${step.id}.mp4`"
               alt=""
@@ -89,8 +90,8 @@ const steps = [
   z-index: 101;
   background: rgba(0, 0, 0, 0.85);
   .modal {
-    height: 80vh;
-    width: 70vw;
+    height: 75vh;
+    width: 75vw;
     display: flex;
     justify-content: flex-end;
     max-width: 1400px;
@@ -121,21 +122,21 @@ const steps = [
 
 .step-module {
   display: flex;
-  align-items: center;
-  padding: 50px 0;
-  border-bottom: 1px solid var(--black-200);
+  flex-direction: column;
+  padding: 50px 20px;
+  border-bottom: 1px solid var(--black-100);
   .image {
-    width: 50%;
     video {
       width: 100%;
       height: 100%;
-      padding: 10px;
+      border-radius: 5px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
   }
   .info {
-    width: 50%;
-    padding-left: 25px;
-
+    padding-left: 10px;
+    margin-top: 15px;
     .title {
       font-size: 28px;
       padding-bottom: 10px;
@@ -143,6 +144,7 @@ const steps = [
     .copy {
       font-size: 18px;
       line-height: 1.4;
+      max-width: 75%;
     }
   }
 }
