@@ -2,8 +2,13 @@
 import { ref } from "vue";
 import { activePerson } from "../store.js";
 import { employees } from "../employees.js";
+import vSelect from "vue-select";
 
 const selected = ref("");
+
+const options = ["foo", "bar", "baz"];
+
+let listOptions = [];
 
 const updateStore = function (selected) {
   let selectedPerson = employees.filter(
@@ -20,14 +25,33 @@ const updateStore = function (selected) {
   <div class="side-panel">
     <div class="panel-inner">
       <div class="logo">
-        <img src="../assets/logo.svg" alt="GLOW Logo" />
+        <a href="https://weareglow.com/"
+          ><img class="glow-logo" src="../assets/logo.svg" alt="GLOW Logo"
+        /></a>
         <div class="headline">Email Signature Builder</div>
       </div>
 
       <div class="picker">
+        <!-- <v-select
+          class="style-chooser"
+          :options="options"
+          :value="activePerson.name"
+          transition=""
+          placeholder="Select Your Name"
+          @input="updateMe(selected)"
+        ></v-select> -->
+
         <div class="divider"></div>
-        <select v-model="selected" @change="updateStore(selected)">
-          <option disabled value="">Select Your Name</option>
+        <p class="subhead">Employee Roster</p>
+        <select
+          class="minimal"
+          v-model="selected"
+          @change="updateStore(selected)"
+          required
+        >
+          <option disabled value="" class="placeholder">
+            Select Your Name
+          </option>
           <option
             v-for="employee in employees"
             v-bind:key="employee.id"
@@ -50,7 +74,7 @@ const updateStore = function (selected) {
             id="name"
             v-model="activePerson.name"
             placeholder="Your Full Name"
-            autocomplete="name"
+            autocomplete="none"
           />
         </div>
         <div class="field">
@@ -72,7 +96,7 @@ const updateStore = function (selected) {
             id="email"
             v-model="activePerson.email"
             placeholder="Your GLOW email"
-            autocomplete="email"
+            autocomplete="none"
           />
         </div>
         <div class="field">
@@ -83,7 +107,7 @@ const updateStore = function (selected) {
             id="phone"
             v-model="activePerson.phone"
             placeholder="Your Phone Number"
-            autocomplete="phone"
+            autocomplete="none"
           />
         </div>
       </div>
@@ -93,22 +117,32 @@ const updateStore = function (selected) {
 
 <style scoped lang="scss">
 .side-panel {
-  width: 475px;
-  height: 100vh;
+  width: 500px;
+  height: 100%;
   padding: 1.5rem;
   background: var(--black-900);
+  overflow-y: scroll;
   .panel-inner {
     display: flex;
     flex-direction: column;
   }
 }
-.picker {
-  select {
-    width: 100%;
-    max-height: 20vh;
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  font-size: 16px;
+  margin: 12px 0 0 0;
+
+  &:invalid {
+    color: var(--black-500);
   }
-  input {
+  &:valid {
     color: white;
+    background: rgba(255, 20, 130, 0.3);
   }
 }
 .fields {
@@ -127,14 +161,14 @@ const updateStore = function (selected) {
 .logo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   img {
-    width: 75%;
+    width: 70%;
   }
   .headline {
-    padding-top: 10px;
+    padding-top: 15px;
+    font-size: 1.75rem;
+    color: white;
   }
 }
 .subhead {
@@ -146,5 +180,29 @@ const updateStore = function (selected) {
   border: 1px solid var(--black-800);
   margin: 20px 0;
 }
+.glow-logo {
+  filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.3));
+  transition: all 500ms ease-in-out;
+  &:hover {
+    filter: drop-shadow(0px 0px 20px var(--glow-pink));
+  }
+}
+
+select.minimal {
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      rgba(255, 255, 255, 0.25) 50%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.25) 50% 50%, transparent 50%),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0.25) 50%
+    );
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
 </style>
-<style src="vue-multiselect/dist/vue-multiselect.css"></style>

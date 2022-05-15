@@ -1,16 +1,24 @@
 <script setup>
 import { ref } from "vue";
-import { activePerson } from "../store.js";
+import { activePerson, modalState } from "../store.js";
 import Clipboard from "clipboard";
+import gsap from "gsap";
+import Modal from "./Modal.vue";
 
-new Clipboard(".btn");
+new Clipboard(".copy-btn");
 
 const showTooltip = function () {
   let tooltip = document.querySelector(".tooltip");
-  tooltip.style.display = "block";
-  setTimeout(() => {
-    tooltip.style.display = "none";
-  }, 1000);
+  gsap.set(tooltip, { display: "block" });
+  gsap.fromTo(tooltip, { opacity: 0 }, { opacity: 1, duration: 0.25 });
+  gsap.to(tooltip, {
+    opacity: 0,
+    duration: 0.5,
+    delay: 1.25,
+    onComplete: () => {
+      gsap.set(tooltip, { display: "none" });
+    },
+  });
 };
 
 const count = ref(0);
@@ -47,19 +55,49 @@ const count = ref(0);
         alt="Email Preview"
       />
     </div>
-    <div>
+    <div class="button-container">
       <button
-        class="btn"
+        class="btn copy-btn"
         @click="showTooltip"
         data-clipboard-target=".preview-sig"
         aria-label="This is the tooltip on the South side."
       >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+          />
+        </svg>
         Copy Signature
       </button>
-      <div class="tooltip">
-        <h3>Copied to the clipboard!</h3>
-      </div>
+      <button class="btn white" @click="modalState.isOpen = true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        How to Add to Gmail
+      </button>
+      <div class="tooltip">Copied To Your Clipboard</div>
     </div>
+    <Modal v-show="modalState.isOpen" />
   </div>
 </template>
 
@@ -87,6 +125,7 @@ const count = ref(0);
   }
   .email-window {
     position: relative;
+    margin-top: 30px;
   }
   .logo {
     width: 128px;
@@ -142,19 +181,56 @@ const count = ref(0);
 }
 .btn {
   all: unset;
-  margin-top: 20px;
-  padding: 8px 20px;
-  background: white;
-  border-radius: 3px;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 17px;
+  background: rgba(255, 20, 130, 0.15);
+  outline: 1px solid var(--glow-pink);
+  color: rgba(255, 255, 255, 0.85);
+  z-index: 10;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 350ms;
+  transition: all 300ms ease-in-out;
   &:hover {
-    background: var(--glow-pink);
+    background: rgba(255, 20, 130, 0.75);
     color: white;
   }
+  svg {
+    height: 21px;
+    padding-right: 6px;
+  }
+  &.white {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 25px;
+    outline: 1px solid white;
+    &:hover {
+      color: black;
+      background: rgba(255, 255, 255, 1);
+    }
+    svg {
+      height: 20px;
+      padding-right: 8px;
+    }
+  }
 }
+
 .tooltip {
   display: none;
   position: absolute;
+  color: rgba(255, 255, 255, 0.75);
+  background: var(--black-800);
+  font-size: 14px;
+  padding: 8px 12px;
+  margin-left: 26px;
+  margin-top: 65px;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.button-container {
+  display: flex;
+  margin-top: 30px;
 }
 </style>

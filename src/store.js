@@ -1,10 +1,10 @@
 import { reactive } from "vue";
 
 export const activePerson = reactive({
-  name: "Active Name",
-  title: "Active Title",
-  email: "active@weareglow.com",
-  phone: "123.456.789",
+  name: "",
+  title: "",
+  email: "",
+  phone: "",
 });
 
 export const modalState = reactive({

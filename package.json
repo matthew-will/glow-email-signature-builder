@@ -8,7 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue-hero-icons/outline": "^1.7.2",
+    "@vue-hero-icons/solid": "^1.7.2",
     "clipboard": "^2.0.11",
+    "gsap": "^3.10.4",
     "vue": "^3.2.25",
     "vue-multiselect": "^3.0.0-alpha.2",
     "vue-select": "^4.0.0-beta.3",
