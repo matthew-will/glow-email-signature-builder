@@ -5,9 +5,13 @@ import Clipboard from "clipboard";
 
 new Clipboard(".btn");
 
-defineProps({
-  msg: String,
-});
+const showTooltip = function () {
+  let tooltip = document.querySelector(".tooltip");
+  tooltip.style.display = "block";
+  setTimeout(() => {
+    tooltip.style.display = "none";
+  }, 1000);
+};
 
 const count = ref(0);
 </script>
@@ -43,9 +47,19 @@ const count = ref(0);
         alt="Email Preview"
       />
     </div>
-    <button class="btn" data-clipboard-target=".preview-sig">
-      Copy Signature
-    </button>
+    <div>
+      <button
+        class="btn"
+        @click="showTooltip"
+        data-clipboard-target=".preview-sig"
+        aria-label="This is the tooltip on the South side."
+      >
+        Copy Signature
+      </button>
+      <div class="tooltip">
+        <h3>Copied to the clipboard!</h3>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -127,8 +141,20 @@ const count = ref(0);
   }
 }
 .btn {
+  all: unset;
   margin-top: 20px;
   padding: 8px 20px;
   background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 350ms;
+  &:hover {
+    background: var(--glow-pink);
+    color: white;
+  }
+}
+.tooltip {
+  display: none;
+  position: absolute;
 }
 </style>
