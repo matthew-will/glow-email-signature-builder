@@ -117,14 +117,24 @@ const updateStore = function (selected) {
 
 <style scoped lang="scss">
 .side-panel {
-  width: 500px;
+  width: 550px;
   height: 100%;
   padding: 1.5rem;
   background: var(--black-900);
   overflow-y: scroll;
+  @media (max-width: 1200px) {
+    width: 500px;
+  }
+  @media (max-width: 920px) {
+    width: 100%;
+    height: unset;
+  }
   .panel-inner {
     display: flex;
     flex-direction: column;
+    @media (max-width: 920px) {
+      padding: 10px;
+    }
   }
 }
 select {
@@ -162,13 +172,28 @@ select {
   display: flex;
   flex-direction: column;
   width: 100%;
+  @media (max-width: 920px) {
+    align-items: center;
+  }
   img {
     width: 70%;
+    @media (max-width: 1200px) {
+      width: 225px;
+    }
+    @media (max-width: 920px) {
+      width: 200px;
+    }
   }
   .headline {
     padding-top: 15px;
     font-size: 1.75rem;
     color: white;
+    @media (max-width: 1200px) {
+      font-size: 1.6rem;
+    }
+    @media (max-width: 920px) {
+      font-size: 1.5rem;
+    }
   }
 }
 .subhead {

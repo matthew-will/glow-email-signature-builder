@@ -105,10 +105,15 @@ const count = ref(0);
 .preview {
   background: var(--black-700);
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 920px) {
+    padding: 20px 0;
+  }
+
   .email-bg {
     position: relative;
     pointer-events: none;

@@ -1,16 +1,13 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onUpdated } from "vue";
 import { modalState } from "../store.js";
-
-const showModal = function () {
-  console.log("close");
-};
+import gsap from "gsap";
 
 const steps = [
   {
     id: 0,
     title: "Copy the Signature",
-    copy: "Verify the information in your signature is correct, then click the `Copy Signature` button to copy it to your clipboard.",
+    copy: "Verify the information in your signature is correct, if it isnt, make updates in the `Edit Signature Details` fields. Once correct, click the `Copy Signature` button to copy it to your clipboard.",
   },
   {
     id: 1,
@@ -41,7 +38,6 @@ const steps = [
       <div class="close-btn" @click="modalState.isOpen = false">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -89,6 +85,7 @@ const steps = [
   width: 100vw;
   z-index: 101;
   background: rgba(0, 0, 0, 0.85);
+
   .modal {
     height: 75vh;
     width: 75vw;
@@ -104,11 +101,17 @@ const steps = [
       height: 100%;
       overflow-y: scroll;
       padding-right: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
   .modal-headline {
     text-align: center;
     font-size: 36px;
+    @media (max-width: 920px) {
+      font-size: 30px;
+    }
   }
   .close-btn {
     position: fixed;
@@ -116,12 +119,18 @@ const steps = [
     z-index: 102;
     svg {
       height: 30px;
+      stroke: var(--black-800);
+      transition: all 300ms;
+    }
+    &:hover svg {
+      stroke: var(--glow-pink);
     }
   }
 }
 
 .step-module {
   display: flex;
+  max-width: 900px;
   flex-direction: column;
   padding: 50px 20px;
   border-bottom: 1px solid var(--black-100);
@@ -129,22 +138,30 @@ const steps = [
     video {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       border-radius: 5px;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
   }
   .info {
-    padding-left: 10px;
-    margin-top: 15px;
+    margin-top: 25px;
     .title {
       font-size: 28px;
       padding-bottom: 10px;
     }
     .copy {
-      font-size: 18px;
-      line-height: 1.4;
-      max-width: 75%;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--black-700);
+      padding-right: 15%;
+      margin-bottom: 50px;
+      @media (max-width: 1200px) {
+        margin-bottom: 10px;
+      }
+      @media (max-width: 920px) {
+        padding-right: 25px;
+      }
     }
   }
 }
