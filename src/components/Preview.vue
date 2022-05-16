@@ -163,7 +163,7 @@ const count = ref(0);
   }
 
   .name {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.5px;
   }
