@@ -17,7 +17,7 @@ const steps = [
   {
     id: 2,
     title: "Create New Signature",
-    copy: " Click '+ Create New' and name your signature accordingly. Then in the text field to the right, paste your signature (CMD + V for Mac, Cntrl + V for PC). It should look the same as in the preview window. If it doesn't ensure you selected all elements.",
+    copy: " Click '+ Create New' and name your signature. In the text field to the right, paste your signature (CMD + V for Mac, Cntrl + V for PC). It should look the same as in the preview window.",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const steps = [
   {
     id: 4,
     title: "Save Changes",
-    copy: "Scroll down to the bottom of the page and click 'Save Changes'. You should now see the email signature on newly composed emails.",
+    copy: "Scroll down to the bottom of the page and click 'Save Changes'. When composing a new email, you should now see your signature applied",
   },
 ];
 </script>
