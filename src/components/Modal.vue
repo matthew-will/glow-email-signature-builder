@@ -3,29 +3,39 @@ import { ref, onUpdated } from "vue";
 import { modalState } from "../store.js";
 import gsap from "gsap";
 
+import step0 from "../assets/video/step-0.mp4";
+import step1 from "../assets/video/step-1.mp4";
+import step2 from "../assets/video/step-2.mp4";
+import step3 from "../assets/video/step-3.mp4";
+import step4 from "../assets/video/step-4.mp4";
+
 const steps = [
   {
-    id: 0,
+    video: step0,
     title: "Copy the Signature",
     copy: "Verify the information in your signature is correct, if it isnt, make updates in the `Edit Signature Details` fields. Once correct, click the `Copy Signature` button to copy it to your clipboard.",
   },
   {
     id: 1,
+    video: step1,
     title: "Open Gmail Settings",
     copy: "In Gmail, click Settings (Gear icon) in the top right corner, then click 'See all Settings'. Scroll down until you see options for 'Signature'.",
   },
   {
     id: 2,
+    video: step2,
     title: "Create New Signature",
     copy: " Click '+ Create New' and name your signature. In the text field to the right, paste your signature (CMD + V for Mac, Cntrl + V for PC). It should look the same as in the preview window.",
   },
   {
     id: 3,
+    video: step3,
     title: "Set Signature Defaults",
     copy: "Open the 'For New Emails Use' dropdown and select your saved signature.",
   },
   {
     id: 4,
+    video: step4,
     title: "Save Changes",
     copy: "Scroll down to the bottom of the page and click 'Save Changes'. When composing a new email, you should now see your signature applied",
   },
@@ -54,14 +64,7 @@ const steps = [
         <p class="modal-headline">How to Add Your Signature to Gmail</p>
         <div class="step-module" v-for="step in steps" :key="step.title">
           <div class="image">
-            <video
-              playsinline
-              muted
-              loop
-              autoplay
-              :src="`../src/assets/video/step-${step.id}.mp4`"
-              alt=""
-            />
+            <video playsinline muted loop autoplay :src="step.video" alt="" />
           </div>
           <div class="info">
             <p class="title">{{ step.title }}</p>
