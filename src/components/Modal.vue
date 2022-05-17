@@ -62,6 +62,13 @@ const steps = [
       </div>
       <div class="modal-inner">
         <p class="modal-headline">How to Add Your Signature to Gmail</p>
+        <p class="modal-subhead">
+          The following are the steps to create, copy, and implement your email
+          signature for Gmail. If you have any trouble doing this reach, out to
+          <a href="https://weareglow.freshdesk.com/support/home" target="_blank"
+            >Helpdesk</a
+          >
+        </p>
         <div class="step-module" v-for="step in steps" :key="step.title">
           <div class="image">
             <video playsinline muted loop autoplay :src="step.video" alt="" />
@@ -116,6 +123,18 @@ const steps = [
       font-size: 30px;
     }
   }
+  .modal-subhead {
+    color: var(--black-500);
+    max-width: 700px;
+    padding: 3px 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    @media (max-width: 920px) {
+    }
+    a {
+      color: var(--glow-pink);
+    }
+  }
   .close-btn {
     position: fixed;
     cursor: pointer;
@@ -135,7 +154,7 @@ const steps = [
   display: flex;
   max-width: 900px;
   flex-direction: column;
-  padding: 50px 20px;
+  padding: 40px 20px;
   border-bottom: 1px solid var(--black-100);
   .image {
     video {
@@ -151,7 +170,7 @@ const steps = [
     margin-top: 25px;
     .title {
       font-size: 28px;
-      padding-bottom: 10px;
+      padding-bottom: 5px;
     }
     .copy {
       font-size: 17px;

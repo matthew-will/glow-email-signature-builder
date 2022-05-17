@@ -43,6 +43,10 @@ const updateStore = function (selected) {
 
         <div class="divider"></div>
         <p class="subhead">Employee Roster</p>
+        <p class="help-text">
+          If you don't see your name listed or would like it displayed
+          differently, edit the fields below.
+        </p>
         <select
           class="minimal"
           v-model="selected"
@@ -171,7 +175,7 @@ select {
 .logo {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   @media (max-width: 920px) {
     align-items: center;
   }
@@ -186,7 +190,7 @@ select {
   }
   .headline {
     padding-top: 15px;
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     color: white;
     @media (max-width: 1200px) {
       font-size: 1.6rem;
@@ -200,6 +204,12 @@ select {
   color: white;
   font-size: 19px;
   letter-spacing: 0.2px;
+}
+.help-text {
+  color: var(--black-500);
+  font-size: 14px;
+  line-height: 1.3;
+  padding: 3px 20px 5px 3px;
 }
 .divider {
   border: 1px solid var(--black-800);
