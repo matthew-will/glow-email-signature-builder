@@ -152,7 +152,7 @@ select {
   margin: 12px 0 0 0;
 
   &:invalid {
-    color: var(--black-500);
+    color: rgba(255, 255, 255, 0.3);
   }
   &:valid {
     color: white;
@@ -201,12 +201,12 @@ select {
   }
 }
 .subhead {
-  color: white;
+  color: var(--black-300);
   font-size: 19px;
   letter-spacing: 0.2px;
 }
 .help-text {
-  color: var(--black-500);
+  color: rgba(255, 255, 255, 0.35);
   font-size: 14px;
   line-height: 1.3;
   padding: 3px 20px 5px 3px;

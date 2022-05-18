@@ -103,7 +103,7 @@ const count = ref(0);
 
 <style scoped lang="scss">
 .preview {
-  background: var(--black-700);
+  background: var(--black-800);
   width: 100%;
   height: 100%;
   display: flex;
@@ -117,8 +117,8 @@ const count = ref(0);
   .email-bg {
     position: relative;
     pointer-events: none;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.4) 0px 30px 60px -30px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   }
   .preview-sig {
     position: absolute;
@@ -225,7 +225,7 @@ const count = ref(0);
   display: none;
   position: absolute;
   color: rgba(255, 255, 255, 0.75);
-  background: var(--black-800);
+  background: rgba(0, 0, 0, 0.25);
   font-size: 14px;
   padding: 8px 12px;
   margin-left: 26px;
