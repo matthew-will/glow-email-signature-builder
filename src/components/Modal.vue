@@ -98,14 +98,17 @@ const steps = [
 
   .modal {
     height: 75vh;
-    width: 75vw;
+    width: 65vw;
     display: flex;
     justify-content: flex-end;
-    max-width: 1400px;
+    max-width: 1200px;
     max-height: 1100px;
     padding: 25px;
     background: white;
     border-radius: 10px;
+    @media (max-width: 1000px) {
+      width: 80vw;
+    }
     &-inner {
       width: 100%;
       height: 100%;
@@ -129,8 +132,7 @@ const steps = [
     padding: 3px 10px;
     text-align: center;
     font-size: 1.1rem;
-    @media (max-width: 920px) {
-    }
+
     a {
       color: var(--glow-pink);
     }
