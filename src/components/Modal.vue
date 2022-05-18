@@ -64,10 +64,13 @@ const steps = [
         <p class="modal-headline">How to Add Your Signature to Gmail</p>
         <p class="modal-subhead">
           The following are the steps to create, copy, and implement your email
-          signature for Gmail. If you have any trouble doing this reach, out to
+          signature for Gmail (if you run into any issues adding your signature
+          to Gmail reach, out to
           <a href="https://weareglow.freshdesk.com/support/home" target="_blank"
             >Helpdesk</a
-          >
+          >). If you use a different email client (for example Mac Mail or
+          Outlook) please reach out to Ann to schedule time to have your
+          signature setup.
         </p>
         <div class="step-module" v-for="step in steps" :key="step.title">
           <div class="image">
@@ -128,11 +131,10 @@ const steps = [
   }
   .modal-subhead {
     color: var(--black-500);
-    max-width: 700px;
-    padding: 3px 10px;
+    max-width: 800px;
+    padding: 3px 20px;
     text-align: center;
-    font-size: 1.1rem;
-
+    font-size: 1rem;
     a {
       color: var(--glow-pink);
     }
