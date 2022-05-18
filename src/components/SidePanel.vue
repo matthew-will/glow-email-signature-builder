@@ -44,8 +44,10 @@ const updateStore = function (selected) {
         <div class="divider"></div>
         <p class="subhead">Employee Roster</p>
         <p class="help-text">
-          If you don't see your name listed or would like it displayed
-          differently, edit the fields below.
+          If you don’t see your name listed or would like it displayed
+          differently, edit the fields below. If you believe that any of the
+          information is incorrect please contact Ann so we can update our
+          records
         </p>
         <select
           class="minimal"
@@ -206,7 +208,7 @@ select {
   letter-spacing: 0.2px;
 }
 .help-text {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 14px;
   line-height: 1.3;
   padding: 3px 20px 5px 3px;
