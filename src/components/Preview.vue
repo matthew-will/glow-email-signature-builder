@@ -28,29 +28,41 @@ const count = ref(0);
   <div class="preview">
     <div class="email-window">
       <div class="preview-sig">
-        <table style="width: 400px" cellspacing="0" border="0">
+        <table
+          style="
+            width: 400px;
+            background: #fff;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+          "
+          cellspacing="0"
+          border="0"
+        >
           <tr>
             <td style="width: 145px">
-              <img
-                src="https://weareglow-assets.s3.amazonaws.com/email-logo/glow-logo-a.png"
-                style="width: 128px; height: 66.38px"
-                alt="GLOW"
-              />
+              <a href="https://weareglow.com/" target="_blank">
+                <img
+                  src="https://weareglow-assets.s3.amazonaws.com/email-logo/glow-logo-a.png"
+                  style="width: 128px; height: 66.38px"
+                  alt="GLOW"
+                />
+              </a>
             </td>
             <td>
-              <p style="font-size: 14px; letter-spacing: 0.5px">
+              <div style="font-size: 14px; letter-spacing: 0.5px; margin: 0">
                 {{ activePerson.name }}
-              </p>
-              <p
+              </div>
+              <div
                 style="
                   font-size: 11px;
                   letter-spacing: 0.5px;
+                  margin: 0;
                   padding-bottom: 2px;
                 "
               >
                 {{ activePerson.title }}
-              </p>
-              <p
+              </div>
+              <div
                 style="
                   font-size: 9px;
                   letter-spacing: 0.4px;
@@ -58,10 +70,17 @@ const count = ref(0);
                 "
               >
                 {{ activePerson.email }}
-              </p>
-              <p style="font-size: 7px; letter-spacing: 0.2px">
+              </div>
+              <div
+                style="
+                  font-size: 9px;
+                  letter-spacing: 0.2px;
+                  margin: 0;
+                  padding-top: 1px;
+                "
+              >
                 {{ activePerson.phone }} • 333 Hudson St. 302 NY, NY 10013
-              </p>
+              </div>
             </td>
           </tr>
         </table>
@@ -149,26 +168,6 @@ const count = ref(0);
   .email-window {
     position: relative;
     margin-top: 30px;
-  }
-
-  .preview-sig a {
-    margin: 0;
-    padding: 0;
-    border: none !important;
-    text-decoration: none !important;
-    color: #8a8a8a;
-  }
-  p {
-    margin: 0;
-  }
-  .preview-sig table,
-  .preview-sig tr,
-  .preview-sig td,
-  .preview-sig a,
-  .preview-sig {
-    text-decoration: none !important;
-    color: #333;
-    background: #fff;
   }
 }
 .btn {
