@@ -28,20 +28,38 @@ const count = ref(0);
   <div class="preview">
     <div class="email-window">
       <div class="preview-sig">
-        <table width="400" cellspacing="0" border="0">
+        <table style="width: 400px" cellspacing="0" border="0">
           <tr>
-            <td class="logo">
-              <a HREF="http://www.weareglow.com"
-                ><img
-                  src="https://weareglow-assets.s3.amazonaws.com/email-logo/glow-logo-a.png"
-                  alt="GLOW"
-              /></a>
+            <td style="width: 145px">
+              <img
+                src="https://weareglow-assets.s3.amazonaws.com/email-logo/glow-logo-a.png"
+                style="width: 128px; height: 66.38px"
+                alt="GLOW"
+              />
             </td>
-            <td id="copy-sig" class="name">
-              {{ activePerson.name }}<br />
-              <p class="title">{{ activePerson.title }}</p>
-              <p class="info lowercase">{{ activePerson.email }}</p>
-              <p class="address">
+            <td>
+              <p style="font-size: 14px; letter-spacing: 0.5px">
+                {{ activePerson.name }}
+              </p>
+              <p
+                style="
+                  font-size: 11px;
+                  letter-spacing: 0.5px;
+                  padding-bottom: 2px;
+                "
+              >
+                {{ activePerson.title }}
+              </p>
+              <p
+                style="
+                  font-size: 9px;
+                  letter-spacing: 0.4px;
+                  padding-bottom: 1px;
+                "
+              >
+                {{ activePerson.email }}
+              </p>
+              <p style="font-size: 7px; letter-spacing: 0.2px">
                 {{ activePerson.phone }} • 333 Hudson St. 302 NY, NY 10013
               </p>
             </td>
@@ -132,15 +150,7 @@ const count = ref(0);
     position: relative;
     margin-top: 30px;
   }
-  .logo {
-    width: 128px;
-    padding-right: 10px;
-  }
 
-  .logo img {
-    height: 100%;
-    width: 100%;
-  }
   .preview-sig a {
     margin: 0;
     padding: 0;
@@ -155,33 +165,10 @@ const count = ref(0);
   .preview-sig tr,
   .preview-sig td,
   .preview-sig a,
-  .preview-sig span {
-    font-family: "Arial", sans-serif;
+  .preview-sig {
     text-decoration: none !important;
     color: #333;
     background: #fff;
-  }
-
-  .name {
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-  }
-
-  .title {
-    font-size: 11px;
-    letter-spacing: 0.5px;
-  }
-
-  .info {
-    font-size: 9px;
-    letter-spacing: 0.4px;
-    padding-top: 5px;
-  }
-  .address {
-    font-size: 7.5px;
-    letter-spacing: 0.2px;
-    padding-top: 4px;
   }
 }
 .btn {
