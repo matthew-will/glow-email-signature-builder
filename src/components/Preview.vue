@@ -34,6 +34,9 @@ const count = ref(0);
             background: #fff;
             color: #333;
             font-family: 'Arial', sans-serif;
+            border-collapse: collapse;
+            mso-table-lspace: 0;
+            mso-table-rspace: 0;
           "
           cellspacing="0"
           border="0"
