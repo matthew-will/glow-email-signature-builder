@@ -29,61 +29,139 @@ const count = ref(0);
     <div class="email-window">
       <div class="preview-sig">
         <table
+          id="sig"
+          width="400"
+          cellspacing="0"
+          cellpadding="0"
+          border-spacing="0"
           style="
             width: 400px;
-            background: #fff;
-            color: #333;
-            font-family: 'Arial', sans-serif;
-            border-collapse: collapse;
-            mso-table-lspace: 0;
-            mso-table-rspace: 0;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: transparent;
           "
-          cellspacing="0"
-          border="0"
         >
           <tr>
-            <td style="width: 145px">
-              <a href="https://weareglow.com/" target="_blank">
+            <td
+              valign="bottom"
+              style="
+                width: 145px;
+                margin: 0;
+                padding: 0;
+                vertical-align: bottom;
+              "
+            >
+              <a
+                href="https://weareglow.com"
+                style="border: none; text-decoration: none"
+              >
                 <img
+                  moz-do-not-send="true"
                   src="https://weareglow-assets.s3.amazonaws.com/email-logo/glow-logo-a.png"
-                  style="width: 128px; height: 66.38px"
                   alt="GLOW"
+                  width="128"
+                  height="66.38"
+                  style="border: none; display: block"
                 />
               </a>
             </td>
-            <td>
-              <div style="font-size: 14px; letter-spacing: 0.5px; margin: 0">
-                {{ activePerson.name }}
-              </div>
-              <div
-                style="
-                  font-size: 11px;
-                  letter-spacing: 0.5px;
-                  margin: 0;
-                  padding-bottom: 2px;
-                "
+
+            <td valign="bottom" style="margin: 0; padding: 0">
+              <table
+                id="sig2"
+                cellspacing="0"
+                cellpadding="0"
+                border-spacing="0"
+                style="padding:0;margin:0;font-family:'Arial,sans-serif;mso-border-collapse:collapse;-webkit-text-size-adjust:none;line-height:1 !important;"
               >
-                {{ activePerson.title }}
-              </div>
-              <div
-                style="
-                  font-size: 9px;
-                  letter-spacing: 0.4px;
-                  padding-bottom: 1px;
-                "
-              >
-                {{ activePerson.email }}
-              </div>
-              <div
-                style="
-                  font-size: 9px;
-                  letter-spacing: 0.2px;
-                  margin: 0;
-                  padding-top: 1px;
-                "
-              >
-                {{ activePerson.phone }} • 333 Hudson St. 302 NY, NY 10013
-              </div>
+                <tr style="margin: 0; padding: 0">
+                  <td
+                    style="
+                      margin: 0;
+                      padding: 0 0 2px 0;
+                      font-family: Arial, sans-serif;
+                      white-space: nowrap;
+                      line-height: 15px;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 14px;
+                        letter-spacing: 0.5px;
+                        margin: 0;
+                        color: #333;
+                      "
+                      >{{ activePerson.name }}</span
+                    >
+                  </td>
+                </tr>
+                <tr style="margin: 0; padding: 0">
+                  <td
+                    style="
+                      margin: 0;
+                      padding: 0 0 3px 0;
+                      font-family: Arial, sans-serif;
+                      white-space: nowrap;
+                      line-height: 12px;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 11px;
+                        letter-spacing: 0.5px;
+                        margin: 0;
+                        color: #333;
+                      "
+                      >{{ activePerson.title }}</span
+                    >
+                  </td>
+                </tr>
+                <tr style="margin: 0; padding: 0">
+                  <td
+                    style="
+                      margin: 0;
+                      padding: 0 0 2px 0;
+                      font-family: Arial, sans-serif;
+                      white-space: nowrap;
+                      line-height: 11px;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 10px;
+                        letter-spacing: 0.5px;
+                        margin: 0;
+                        color: #333;
+                      "
+                      >{{ activePerson.email }}</span
+                    >
+                  </td>
+                </tr>
+
+                <tr style="margin: 0; padding: 0">
+                  <td
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      font-family: Arial, sans-serif;
+                      white-space: nowrap;
+                      line-height: 10px;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 9px;
+                        letter-spacing: 0.2px;
+                        margin: 0;
+                        color: #333;
+                      "
+                      >{{ activePerson.phone }} • 333 Hudson St. 302 NY, NY
+                      10013</span
+                    >
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
         </table>
