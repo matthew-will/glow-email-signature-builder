@@ -30,12 +30,12 @@ const count = ref(0);
       <div class="preview-sig">
         <table
           id="sig"
-          width="500"
+          width="525"
           cellspacing="0"
           cellpadding="0"
           border-spacing="0"
           style="
-            width: 500px;
+            width: 525px;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -46,10 +46,10 @@ const count = ref(0);
             <td
               valign="bottom"
               style="
-                width: 128px;
                 margin: 0;
                 padding: 0;
                 vertical-align: bottom;
+                width: 128px;
               "
             >
               <a
@@ -61,13 +61,12 @@ const count = ref(0);
                   src="https://weareglow-assets.s3.amazonaws.com/email-logo/glow-logo-a.png"
                   alt="GLOW"
                   width="128"
-                  height="66.38"
-                  style="border: none; display: block"
+                  style="border: none; display: block; width: 128px"
                 />
               </a>
             </td>
 
-            <td style="height: 66.38px; width: 10px"></td>
+            <td style="height: 60px; width: 10px"></td>
 
             <td valign="bottom" style="margin: 0; padding: 0">
               <table
