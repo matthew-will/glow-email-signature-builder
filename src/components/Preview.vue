@@ -30,12 +30,12 @@ const count = ref(0);
       <div class="preview-sig">
         <table
           id="sig"
-          width="400"
+          width="500"
           cellspacing="0"
           cellpadding="0"
           border-spacing="0"
           style="
-            width: 400px;
+            width: 500px;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -46,7 +46,7 @@ const count = ref(0);
             <td
               valign="bottom"
               style="
-                width: 145px;
+                width: 128px;
                 margin: 0;
                 padding: 0;
                 vertical-align: bottom;
@@ -66,6 +66,8 @@ const count = ref(0);
                 />
               </a>
             </td>
+
+            <td style="height: 66.38px; width: 10px"></td>
 
             <td valign="bottom" style="margin: 0; padding: 0">
               <table
