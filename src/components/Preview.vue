@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { activePerson, modalState } from "../store.js";
 import Clipboard from "clipboard";
 import gsap from "gsap";
@@ -20,6 +20,10 @@ const showTooltip = function () {
     },
   });
 };
+
+const phoneHREF = computed(() => {
+  return activePerson.phone.replace(/\./g, "");
+});
 
 const count = ref(0);
 </script>
@@ -157,8 +161,10 @@ const count = ref(0);
                         margin: 0;
                         color: #333;
                       "
-                      >{{ activePerson.phone }} • 333 Hudson St. 302 NY, NY
-                      10013</span
+                      ><a :href="`tel:${phoneHREF}`">{{
+                        activePerson.phone
+                      }}</a>
+                      • 333 Hudson St. 302 NY, NY 10013</span
                     >
                   </td>
                 </tr>
